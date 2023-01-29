@@ -1,7 +1,18 @@
 <script setup lang="ts">
 import { NInput, NButton, NCard, NGradientText, NInputGroup } from 'naive-ui'
 import { GlassesOutline, Glasses } from '@vicons/ionicons5'
-import footer from '../components/footer.vue'
+import { useRouter } from 'vue-router'
+import { ref } from 'vue'
+const router = useRouter();
+const name = ref("admin");
+const password =ref("123456");
+const login=()=>{
+    console.log(name,password)
+    if (name.value=="admin" && password.value == "admin"){
+        console.log(name,password)
+        router.push("/layout")
+    } 
+}
 </script>
 <template>
     <div class="main">
@@ -13,7 +24,7 @@ import footer from '../components/footer.vue'
                 <div class="name">
                 <n-input-group>
                         <!-- 用户名： -->
-                    <n-input placeholder="请输入用户名" size="large" type="text" />
+                    <n-input placeholder="请输入用户名" v-model:value="name" size="large" type="text" />
                 </n-input-group>
             </div>
             <div class="password">
@@ -25,6 +36,7 @@ import footer from '../components/footer.vue'
       placeholder="请输入密码"
       size="large"
       :maxlength="8"
+      v-model:value="password"
     >
       <template #password-visible-icon>
         <n-icon :size="16" :component="GlassesOutline" />
@@ -37,7 +49,7 @@ import footer from '../components/footer.vue'
             </div>
             </div>
             <div class="btn">
-                <n-button size="large" type="success">
+                <n-button size="large" @click="login" type="success">
                     登录
                 </n-button>
             </div>

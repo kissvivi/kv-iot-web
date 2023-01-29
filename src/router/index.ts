@@ -5,7 +5,7 @@ export default createRouter({
   history: createWebHashHistory(),
   // 路由地址
   routes: [
-    { path: '/login', component: Login },
+    { path: '/', component: Login },
     { path: '/footer', component: ()=>import('../components/footer.vue') },
     { path: '/header', component: ()=>import('../components/header.vue') },
     { path: '/right', component: ()=>import('../components/lefter.vue') },

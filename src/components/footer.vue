@@ -14,12 +14,11 @@ const drawer=true;
     <div class='footer'>
         <span class="scroll"></span>
         <el-divider></el-divider>
-        <span>法律声明</span>
+        <span>声明</span>
         <el-divider direction="vertical"></el-divider>
         <span>友情链接</span>
         <el-divider direction="vertical"></el-divider>
         <span @click="drawer = true">联系我</span>
-        <br/>
         <br/>
         <span class="copyright">made in @kv-iot</span>
         <el-drawer
@@ -41,7 +40,7 @@ const drawer=true;
   </style>
   <style scoped>
       .footer{
-          height: 250px;
+          height: 80px;
           text-align: center;
           font-size: 16px;
           padding: 0px 100px;
