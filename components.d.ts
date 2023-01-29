@@ -25,6 +25,7 @@ declare module '@vue/runtime-core' {
     Header: typeof import('./src/components/header.vue')['default']
     Layout: typeof import('./src/components/layout.vue')['default']
     Lefter: typeof import('./src/components/lefter.vue')['default']
+    Message: typeof import('./src/components/message.vue')['default']
     Right: typeof import('./src/components/right.vue')['default']
     Righter: typeof import('./src/components/righter.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

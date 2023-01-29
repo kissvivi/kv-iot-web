@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 </script>
 <template>
     <div>
@@ -9,7 +8,6 @@
           <el-aside width="200px"><Lefter></Lefter></el-aside>
           <el-container>
             <el-main><Righter></Righter></el-main>
-            
           </el-container>
         </el-container>
       </el-container>
