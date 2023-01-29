@@ -21,7 +21,7 @@ const drawer=true;
         <span @click="drawer = true">联系我</span>
         <br/>
         <br/>
-        <span class="copyright">版权所有 JEmbrace</span>
+        <span class="copyright">made in @kv-iot</span>
         <el-drawer
           title="联系我"
           :visible.sync="drawer"

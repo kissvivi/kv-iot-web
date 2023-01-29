@@ -43,8 +43,9 @@ import footer from '../components/footer.vue'
             </div>
 
         </n-card>
+        
     </div>
-    <footer></footer>
+    <Footer></Footer>
 </template>
 
 <style scoped>
