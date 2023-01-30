@@ -8,7 +8,8 @@ export interface ResType<T> {
     err?: string
 }
 export interface ILoginApiParams {
-    id: number
+    username: string
+    password: string
 }
 export interface ILoginApi {
     login: (params: ILoginApiParams) => Promise<ResType<DataType>>

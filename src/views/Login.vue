@@ -7,13 +7,20 @@ import { ref } from 'vue'
 
 import { ElMessage } from "element-plus";
 
+import { ILoginApi } from '../services/api/type'
+// const name = ref("admin");
+// const password =ref("123456");
+const routAndPassword= ref({name:"admin",password:"123456"});
+
 const router = useRouter();
-const name = ref("admin");
-const password =ref("123456");
+// routAndPassword.value.name = name
+// routAndPassword.value.password = password
 const login=()=>{
-    console.log(name,password)
-    if (name.value=="admin" && password.value == "admin"){
-        console.log(name,password)
+    // console.log(name,password)
+
+    if (routAndPassword.value.name=="admin" && routAndPassword.value.password == "admin"){
+        // console.log(name,password)
+        console.log(routAndPassword)
         router.push("/layout")
     }else{
         ElMessage.warning('用户名或密码错误')
@@ -23,8 +30,9 @@ const login=()=>{
 
 </script>
 <template>
-    
+    <!-- <h2>KV-IOT云边物联网平台</h2> -->
     <div class="main">
+        
         <div class = "ssvg">
             <h2>KV-IOT云边物联网平台</h2>
   <svg width="800" height="359" viewBox="0 0 967 595">
@@ -45,7 +53,7 @@ const login=()=>{
                 <div class="name">
                 <n-input-group>
                         <!-- 用户名： -->
-                    <n-input placeholder="请输入用户名" v-model:value="name" size="large" type="text" />
+                    <n-input placeholder="请输入用户名" v-model:value="routAndPassword.name" size="large" type="text" />
                 </n-input-group>
             </div>
             <div class="password">
@@ -57,7 +65,7 @@ const login=()=>{
       placeholder="请输入密码"
       size="large"
       :maxlength="8"
-      v-model:value="password"
+      v-model:value="routAndPassword.password"
     >
       <template #password-visible-icon>
         <n-icon :size="16" :component="GlassesOutline" />
