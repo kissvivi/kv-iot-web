@@ -1,14 +1,15 @@
 <template>
     <el-menu
+    :router='true'
       :default-active="activeIndex"
       class="el-menu-demo"
       mode="horizontal"
       :ellipsis="false"
       @select="handleSelect"
     >
-      <el-menu-item index="0">KV-IOT</el-menu-item>
+      <el-menu-item index="/right/hello">KV-IOT</el-menu-item>
       <div class="flex-grow" />
-      <el-menu-item index="1">github</el-menu-item>
+      <el-menu-item><a href="https://github.com/kissvivi/kv-iot">github</a></el-menu-item>
       <el-sub-menu index="2">
         <template #title>我的</template>
         <el-menu-item index="2-1">item one</el-menu-item>

@@ -7,7 +7,14 @@
         <el-container>
           <el-aside width="200px"><Lefter></Lefter></el-aside>
           <el-container>
-            <el-main><Righter></Righter></el-main>
+            <el-main>
+              <el-page-header :icon="ArrowLeft">
+                <template #content>
+      <span class="text-large font-600 mr-3"> {{ $route.name}} </span>
+    </template>
+              <router-view></router-view>
+            </el-page-header>
+            </el-main>
           </el-container>
         </el-container>
       </el-container>
@@ -19,5 +26,7 @@
     color: #000;
 }
 </style>
-
+<script lang="ts" setup>
+import { ArrowLeft } from '@element-plus/icons-vue'
+</script>
   

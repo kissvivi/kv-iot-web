@@ -4,13 +4,14 @@
       <el-radio-button :label="true">collapse</el-radio-button>
     </el-radio-group> -->
     <el-menu
+      :router='true'
       default-active="2"
       class="el-menu-vertical-demo"
       :collapse="isCollapse"
       @open="handleOpen"
       @close="handleClose"
     >
-      <el-sub-menu index="1">
+      <el-sub-menu index="/system/list">
         <template #title>
           <el-icon><location /></el-icon>
           <span>系统管理</span>
@@ -27,15 +28,15 @@
           <el-menu-item index="1-4-1">资源列表</el-menu-item>
         </el-sub-menu>
       </el-sub-menu>
-      <el-menu-item index="2">
+      <el-menu-item index="/layout/data/list">
         <el-icon><icon-menu /></el-icon>
         <template #title>连接管理</template>
       </el-menu-item>
-      <el-menu-item index="3" disabled>
+      <el-menu-item index="/layout/product/list">
         <el-icon><document /></el-icon>
         <template #title>产品管理</template>
       </el-menu-item>
-      <el-menu-item index="4">
+      <el-menu-item index="/layout/device/list">
         <el-icon><setting /></el-icon>
         <template #title>设备管理</template>
       </el-menu-item>
