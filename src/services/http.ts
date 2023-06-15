@@ -35,6 +35,7 @@ interface ResType<T> {
 interface Http {
     get<T>(url: string, params?: unknown): Promise<ResType<T>>
     post<T>(url: string, params?: unknown): Promise<ResType<T>>
+    delete<T>(url: string, params?: unknown): Promise<ResType<T>>
     upload<T>(url: string, params: unknown): Promise<ResType<T>>
     download(url: string): void
 }
@@ -63,6 +64,18 @@ const http: Http = {
                 })
         })
     },
+    delete(url, params) {
+        return new Promise((resolve, reject) => {
+          axios
+            .delete(url, { data: JSON.stringify(params) })
+            .then((res) => {
+              resolve(res.data);
+            })
+            .catch((err) => {
+              reject(err.data);
+            });
+        });
+      },
     upload(url, file) {
         return new Promise((resolve, reject) => {
             axios
